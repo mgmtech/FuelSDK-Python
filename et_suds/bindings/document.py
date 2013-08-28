@@ -60,6 +60,8 @@ class Document(Binding):
             else:
                 value = kwargs.get(pd[0])
             n += 1
+            if value is None:
+                continue
             p = self.mkparam(method, pd, value)
             if p is None:
                 continue
