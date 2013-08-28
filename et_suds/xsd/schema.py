@@ -23,16 +23,16 @@ tranparent referenced type resolution and targeted denormalization.
 """
 
 
-import suds.metrics
-from suds import *
-from suds.xsd import *
-from suds.xsd.sxbuiltin import *
-from suds.xsd.sxbasic import Factory as BasicFactory
-from suds.xsd.sxbuiltin import Factory as BuiltinFactory
-from suds.xsd.sxbase import SchemaObject
-from suds.xsd.deplist import DepList
-from suds.sax.element import Element
-from suds.sax import splitPrefix, Namespace
+import et_suds.metrics
+from et_suds import *
+from et_suds.xsd import *
+from et_suds.xsd.sxbuiltin import *
+from et_suds.xsd.sxbasic import Factory as BasicFactory
+from et_suds.xsd.sxbuiltin import Factory as BuiltinFactory
+from et_suds.xsd.sxbase import SchemaObject
+from et_suds.xsd.deplist import DepList
+from et_suds.sax.element import Element
+from et_suds.sax import splitPrefix, Namespace
 from logging import getLogger
 
 log = getLogger(__name__)
@@ -43,7 +43,7 @@ class SchemaCollection:
     A collection of schema objects.  This class is needed because WSDLs 
     may contain more then one <schema/> node.
     @ivar wsdl: A wsdl object.
-    @type wsdl: L{suds.wsdl.Definitions}
+    @type wsdl: L{et_suds.wsdl.Definitions}
     @ivar children: A list contained schemas.
     @type children: [L{Schema},...]
     @ivar namespaces: A dictionary of contained schemas by namespace.
@@ -53,7 +53,7 @@ class SchemaCollection:
     def __init__(self, wsdl):
         """
         @param wsdl: A wsdl object.
-        @type wsdl: L{suds.wsdl.Definitions}
+        @type wsdl: L{et_suds.wsdl.Definitions}
         """
         self.wsdl = wsdl
         self.children = []

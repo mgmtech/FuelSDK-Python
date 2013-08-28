@@ -19,9 +19,9 @@ The I{service definition} provides a textual representation of a service.
 """
 
 from logging import getLogger
-from suds import *
-import suds.metrics as metrics
-from suds.sax import Namespace
+from et_suds import *
+import et_suds.metrics as metrics
+from et_suds.sax import Namespace
 
 log = getLogger(__name__)
 
@@ -32,7 +32,7 @@ class ServiceDefinition:
     @ivar wsdl: A wsdl.
     @type wsdl: L{wsdl.Definitions}
     @ivar service: The service object.
-    @type service: L{suds.wsdl.Service}
+    @type service: L{et_suds.wsdl.Service}
     @ivar ports: A list of port-tuple: (port, [(method-name, pdef)])
     @type ports: [port-tuple,..]
     @ivar prefixes: A list of remapped prefixes.
@@ -179,7 +179,7 @@ class ServiceDefinition:
         """
         Get a (namespace) translated I{qualified} name for specified type.
         @param type: A schema type.
-        @type type: I{suds.xsd.sxbasic.SchemaObject}
+        @type type: I{et_suds.xsd.sxbasic.SchemaObject}
         @return: A translated I{qualified} name.
         @rtype: str
         """

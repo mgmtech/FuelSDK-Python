@@ -18,11 +18,11 @@
 Suds basic options classes.
 """
 
-from suds.properties import *
-from suds.wsse import Security
-from suds.xsd.doctor import Doctor
-from suds.transport import Transport
-from suds.cache import Cache, NoCache
+from et_suds.properties import *
+from et_suds.wsse import Security
+from et_suds.xsd.doctor import Doctor
+from et_suds.transport import Transport
+from et_suds.cache import Cache, NoCache
 
 
 class TpLinker(AutoLinker):

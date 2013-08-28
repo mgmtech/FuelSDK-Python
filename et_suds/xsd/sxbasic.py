@@ -20,13 +20,13 @@ I{basic} schema objects.
 """
 
 from logging import getLogger
-from suds import *
-from suds.xsd import *
-from suds.xsd.sxbase import *
-from suds.xsd.query import *
-from suds.sax import splitPrefix, Namespace
-from suds.transport import TransportError
-from suds.reader import DocumentReader
+from et_suds import *
+from et_suds.xsd import *
+from et_suds.xsd.sxbase import *
+from et_suds.xsd.query import *
+from et_suds.sax import splitPrefix, Namespace
+from et_suds.transport import TransportError
+from et_suds.reader import DocumentReader
 from urlparse import urljoin
 
 
@@ -816,7 +816,7 @@ class Factory:
 #######################################################
 Import.bind(
     'http://schemas.xmlsoap.org/soap/encoding/',
-    'suds://schemas.xmlsoap.org/soap/encoding/')
+    'et_suds://schemas.xmlsoap.org/soap/encoding/')
 Import.bind(
     'http://www.w3.org/XML/1998/namespace',
     'http://www.w3.org/2001/xml.xsd')

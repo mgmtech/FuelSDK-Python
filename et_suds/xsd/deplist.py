@@ -19,7 +19,7 @@ The I{depsolve} module defines a class for performing dependancy solving.
 """
 
 from logging import getLogger
-from suds import *
+from et_suds import *
 
 log = getLogger(__name__)
 

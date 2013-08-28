@@ -19,10 +19,10 @@ The I{soaparray} module provides XSD extensions for handling
 soap (section 5) encoded arrays.
 """
 
-from suds import *
+from et_suds import *
 from logging import getLogger
-from suds.xsd.sxbasic import Factory as SXFactory
-from suds.xsd.sxbasic import Attribute as SXAttribute
+from et_suds.xsd.sxbasic import Factory as SXFactory
+from et_suds.xsd.sxbasic import Attribute as SXAttribute
 
 
 class Attribute(SXAttribute):

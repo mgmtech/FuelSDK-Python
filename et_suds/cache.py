@@ -19,11 +19,11 @@ Contains basic caching classes.
 """
 
 import os
-import suds
+import et_suds
 from tempfile import gettempdir as tmp
-from suds.transport import *
-from suds.sax.parser import Parser
-from suds.sax.element import Element
+from et_suds.transport import *
+from et_suds.sax.parser import Parser
+from et_suds.sax.element import Element
 from datetime import datetime as dt
 from datetime import timedelta
 from cStringIO import StringIO
@@ -125,7 +125,7 @@ class FileCache(Cache):
     @ivar location: The directory for the cached files.
     @type location: str
     """
-    fnprefix = 'suds'
+    fnprefix = 'et_suds'
     units = ('months', 'weeks', 'days', 'hours', 'minutes', 'seconds')
     
     def __init__(self, location=None, **duration):
@@ -138,7 +138,7 @@ class FileCache(Cache):
         @type duration: {unit:value}
         """
         if location is None:
-            location = os.path.join(tmp(), 'suds')
+            location = os.path.join(tmp(), 'et_suds')
         self.location = location
         self.duration = (None, 0)
         self.setduration(**duration)
@@ -271,12 +271,12 @@ class FileCache(Cache):
             f = self.open(path)
             version = f.read()
             f.close()
-            if version != suds.__version__:
+            if version != et_suds.__version__:
                 raise Exception()
         except:
             self.clear()
             f = self.open(path, 'w')
-            f.write(suds.__version__)
+            f.write(et_suds.__version__)
             f.close()        
     
     def __fn(self, id):

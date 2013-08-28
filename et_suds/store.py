@@ -16,7 +16,7 @@
 
 """
 Contains XML text for documents to be distributed
-with the suds lib.  Also, contains classes for accessing
+with the et_suds lib.  Also, contains classes for accessing
 these documents.
 """
 
@@ -536,7 +536,7 @@ encoding = \
 
 class DocumentStore:
     """
-    The I{suds} document store provides a local repository
+    The I{et_suds} document store provides a local repository
     for xml documnts.
     @cvar protocol: The URL protocol for the store.
     @type protocol: str
@@ -544,7 +544,7 @@ class DocumentStore:
     @type store: dict
     """
     
-    protocol = 'suds'
+    protocol = 'et_suds'
     
     store = {
         'schemas.xmlsoap.org/soap/encoding/' : encoding

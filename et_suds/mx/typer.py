@@ -19,10 +19,10 @@ Provides sx typing classes.
 """
 
 from logging import getLogger
-from suds import *
-from suds.mx import *
-from suds.sax import Namespace as NS
-from suds.sax.text import Text
+from et_suds import *
+from et_suds.mx import *
+from et_suds.sax import Namespace as NS
+from et_suds.sax.text import Text
 
 log = getLogger(__name__)
 

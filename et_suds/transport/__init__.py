@@ -98,7 +98,7 @@ class Transport:
         """
         Constructor.
         """
-        from suds.transport.options import Options
+        from et_suds.transport.options import Options
         self.options = Options()
         del Options
     

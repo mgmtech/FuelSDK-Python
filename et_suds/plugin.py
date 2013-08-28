@@ -16,10 +16,10 @@
 
 """
 The plugin module provides classes for implementation
-of suds plugins.
+of et_suds plugins.
 """
 
-from suds import *
+from et_suds import *
 from logging import getLogger
 
 log = getLogger(__name__)
@@ -72,7 +72,7 @@ class Plugin:
 
 class InitPlugin(Plugin):
     """
-    The base class for suds I{init} plugins.
+    The base class for et_suds I{init} plugins.
     """
     
     def initialized(self, context):
@@ -88,7 +88,7 @@ class InitPlugin(Plugin):
 
 class DocumentPlugin(Plugin):
     """
-    The base class for suds I{document} plugins.
+    The base class for et_suds I{document} plugins.
     """
     
     def loaded(self, context): 
@@ -114,7 +114,7 @@ class DocumentPlugin(Plugin):
 
 class MessagePlugin(Plugin):
     """
-    The base class for suds I{soap message} plugins.
+    The base class for et_suds I{soap message} plugins.
     """
     
     def marshalled(self, context):
@@ -167,7 +167,7 @@ class MessagePlugin(Plugin):
         Provides the plugin with the opportunity to inspect/modify
         the unmarshalled reply object before it is returned.
         @param context: The reply context.
-            The I{reply} is unmarshalled suds object.
+            The I{reply} is unmarshalled et_suds object.
         @type context: L{MessageContext}
         """
         pass

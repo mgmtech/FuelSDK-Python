@@ -21,19 +21,19 @@ The goal is to provide an easy, intuative interface for managing XML
 documents.  Although, the term, DOM, is used above, this model is
 B{far} better.
 
-XML namespaces in suds are represented using a (2) element tuple
+XML namespaces in et_suds are represented using a (2) element tuple
 containing the prefix and the URI.  Eg: I{('tns', 'http://myns')}
 
 """
 
 from logging import getLogger
-import suds.metrics
-from suds import *
-from suds.sax import *
-from suds.sax.document import Document
-from suds.sax.element import Element
-from suds.sax.text import Text
-from suds.sax.attribute import Attribute
+import et_suds.metrics
+from et_suds import *
+from et_suds.sax import *
+from et_suds.sax.document import Document
+from et_suds.sax.element import Element
+from et_suds.sax.text import Text
+from et_suds.sax.attribute import Attribute
 from xml.sax import make_parser, InputSource, ContentHandler
 from xml.sax.handler import feature_external_ges
 from cStringIO import StringIO

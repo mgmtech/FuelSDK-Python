@@ -19,9 +19,9 @@ Provides XML I{document} classes.
 """
 
 from logging import getLogger
-from suds import *
-from suds.sax import *
-from suds.sax.element import Element
+from et_suds import *
+from et_suds.sax import *
+from et_suds.sax.element import Element
 
 log = getLogger(__name__)
 

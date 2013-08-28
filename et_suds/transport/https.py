@@ -19,8 +19,8 @@ Contains classes for basic HTTP (authenticated) transport implementations.
 """
 
 import urllib2 as u2
-from suds.transport import *
-from suds.transport.http import HttpTransport
+from et_suds.transport import *
+from et_suds.transport.http import HttpTransport
 from logging import getLogger
 
 log = getLogger(__name__)

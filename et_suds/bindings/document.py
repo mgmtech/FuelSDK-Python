@@ -19,9 +19,9 @@ Provides classes for the (WS) SOAP I{document/literal}.
 """
 
 from logging import getLogger
-from suds import *
-from suds.bindings.binding import Binding
-from suds.sax.element import Element
+from et_suds import *
+from et_suds.bindings.binding import Binding
+from et_suds.sax.element import Element
 
 log = getLogger(__name__)
 
@@ -31,7 +31,7 @@ class Document(Binding):
     The document/literal style.  Literal is the only (@use) supported
     since document/encoded is pretty much dead.
     Although the soap specification supports multiple documents within the soap
-    <body/>, it is very uncommon.  As such, suds presents an I{RPC} view of
+    <body/>, it is very uncommon.  As such, et_suds presents an I{RPC} view of
     service methods defined with a single document parameter.  This is done so 
     that the user can pass individual parameters instead of one, single document.
     To support the complete specification, service methods defined with multiple documents

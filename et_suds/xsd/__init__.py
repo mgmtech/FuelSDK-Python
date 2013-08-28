@@ -23,8 +23,8 @@ tranparent referenced type resolution and targeted denormalization.
 """
 
 from logging import getLogger
-from suds import *
-from suds.sax import Namespace, splitPrefix
+from et_suds import *
+from et_suds.sax import Namespace, splitPrefix
 
 log = getLogger(__name__)
 

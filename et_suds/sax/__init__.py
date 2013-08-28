@@ -21,7 +21,7 @@ The goal is to provide an easy, intuative interface for managing XML
 documents.  Although, the term, DOM, is used above, this model is
 B{far} better.
 
-XML namespaces in suds are represented using a (2) element tuple
+XML namespaces in et_suds are represented using a (2) element tuple
 containing the prefix and the URI.  Eg: I{('tns', 'http://myns')}
 
 @var encoder: A I{pluggable} XML special character processor used to
@@ -29,7 +29,7 @@ containing the prefix and the URI.  Eg: I{('tns', 'http://myns')}
 @type encoder: L{Encoder}
 """
 
-from suds.sax.enc import Encoder
+from et_suds.sax.enc import Encoder
 
 #
 # pluggable XML special character encoder.

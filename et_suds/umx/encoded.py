@@ -19,10 +19,10 @@ Provides soap encoded unmarshaller classes.
 """
 
 from logging import getLogger
-from suds import *
-from suds.umx import *
-from suds.umx.typed import Typed
-from suds.sax import splitPrefix, Namespace
+from et_suds import *
+from et_suds.umx import *
+from et_suds.umx.typed import Typed
+from et_suds.sax import splitPrefix, Namespace
 
 log = getLogger(__name__)
 

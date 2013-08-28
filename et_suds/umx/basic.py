@@ -19,9 +19,9 @@ Provides basic unmarshaller classes.
 """
 
 from logging import getLogger
-from suds import *
-from suds.umx import *
-from suds.umx.core import Core
+from et_suds import *
+from et_suds.umx import *
+from et_suds.umx.core import Core
 
 
 class Basic(Core):
@@ -34,7 +34,7 @@ class Basic(Core):
         Process an object graph representation of the xml I{node}.
         @param node: An XML tree.
         @type node: L{sax.element.Element}
-        @return: A suds object.
+        @return: A et_suds object.
         @rtype: L{Object}
         """
         content = Content(node)

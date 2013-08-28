@@ -19,9 +19,9 @@ Provides basic I{marshaller} classes.
 """
 
 from logging import getLogger
-from suds import *
-from suds.mx import *
-from suds.mx.core import Core
+from et_suds import *
+from et_suds.mx import *
+from et_suds.mx.core import Core
 
 log = getLogger(__name__)
 
