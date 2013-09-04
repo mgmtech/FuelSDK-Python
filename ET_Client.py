@@ -30,17 +30,22 @@ class ET_Client(object):
     soap_client = None
 
     ## get_server_wsdl - if True and a newer WSDL is on the server than the local filesystem retrieve it
-    def __init__(self, client_id, client_secret, appsignature,
+    def __init__(self, client_id, client_secret, appsignature='none',
                  wsdl_server_url = 'https://webservice.exacttarget.com/etframework.wsdl',
                  get_server_wsdl = False, debug = False, params = None):
 
         self.debug = debug
         if(debug):
-            logging.basicConfig(level=logging.INFO)
             logging.getLogger('et_suds.client').setLevel(logging.DEBUG)
             logging.getLogger('et_suds.transport').setLevel(logging.DEBUG)
             logging.getLogger('et_suds.xsd.schema').setLevel(logging.DEBUG)
             logging.getLogger('et_suds.wsdl').setLevel(logging.DEBUG)
+        else:
+            logging.getLogger('et_suds').setLevel(logging.ERROR)
+            logging.getLogger('et_suds.client').setLevel(logging.ERROR)
+            logging.getLogger('et_suds.transport').setLevel(logging.ERROR)
+            logging.getLogger('et_suds.xsd.schema').setLevel(logging.ERROR)
+            logging.getLogger('et_suds.wsdl').setLevel(logging.ERROR)
 
         self.client_id = client_id
         self.client_secret = client_secret
@@ -120,10 +125,10 @@ class ET_Client(object):
                 payload['refreshToken'] = self.refreshKey
 
             r = requests.post('https://auth.exacttargetapis.com/v1/requestToken?legacy=1', data=json.dumps(payload), headers=headers)
-            tokenResponse = r.json()
+            tokenResponse = r.json
 
             if 'accessToken' not in tokenResponse:
-                raise Exception('Unable to validate App Keys(ClientID/ClientSecret) provided: ' + repr(r.json()))
+                raise Exception('Unable to validate App Keys(ClientID/ClientSecret) provided: ' + repr(r.json))
 
             self.authToken = tokenResponse['accessToken']
             self.authTokenExpiration = time.time() + tokenResponse['expiresIn']
@@ -137,7 +142,7 @@ class ET_Client(object):
     def determineStack(self):
         try:
             r = requests.get('https://www.exacttargetapis.com/platform/v1/endpoints/soap?access_token=' + self.authToken)
-            contextResponse = r.json()
+            contextResponse = r.json
             if('url' in contextResponse):
                 return str(contextResponse['url'])
 
@@ -203,9 +208,9 @@ class ET_Constructor(object):
                     self.status = False
 
                 try:
-                    self.results = response.json()
+                    self.results = response.json
                 except:
-                    self.message = response.json()
+                    self.message = response.json
 
                 #additional parsing will happen in the child object that called in to here.
 
